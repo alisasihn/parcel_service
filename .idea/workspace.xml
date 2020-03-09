@@ -1,14 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="99d69054-1c6a-4352-bd7e-30a1e35fd86d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DistanceGraph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Distances.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PackageHashTable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PackageHashTableChaining.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PackageHashTableLinear.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WGUPS_Distance_Table.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WGUPS_Package_File.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/parcel_service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/parcel_service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YkCsJgPoPvW5vBXIKvn6Z9VPJu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/parcel_service" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Packages">
+    <configuration name="Distances" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="parcel_service" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Distances.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Packages" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="parcel_service" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Packages.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Packages" />
+        <item itemvalue="Python.Distances" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99d69054-1c6a-4352-bd7e-30a1e35fd86d" name="Default Changelist" comment="" />
+      <created>1583477411529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583477411529</updated>
+      <workItem from="1583477419868" duration="684000" />
+      <workItem from="1583524243289" duration="10266000" />
+      <workItem from="1583566047128" duration="21000" />
+      <workItem from="1583566081952" duration="681000" />
+      <workItem from="1583566911533" duration="259000" />
+      <workItem from="1583567189739" duration="20094000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="319" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1583477420950">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="1469" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583692833354">
+      <screen x="1280" y="111" width="1920" height="1057" />
     </state>
+    <state x="1469" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583692833354" />
+    <state x="1953" y="449" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583568050775">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state x="1953" y="449" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583568050775" />
+    <state x="1978" y="393" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583567093384">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state x="1978" y="393" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583567093384" />
+    <state x="1793" y="288" key="FileChooserDialogImpl" timestamp="1583524924401">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state x="1793" y="288" key="FileChooserDialogImpl/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583524924401" />
+    <state width="1878" height="393" key="GridCell.Tab.0.bottom" timestamp="1583730840073">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="393" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583730840073" />
+    <state width="1878" height="393" key="GridCell.Tab.0.center" timestamp="1583730840072">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="393" key="GridCell.Tab.0.center/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583730840072" />
+    <state width="1878" height="393" key="GridCell.Tab.0.left" timestamp="1583730840071">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="393" key="GridCell.Tab.0.left/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583730840071" />
+    <state width="1878" height="393" key="GridCell.Tab.0.right" timestamp="1583730840072">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="393" key="GridCell.Tab.0.right/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583730840072" />
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1583695367127">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.bottom/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583695367127" />
+    <state width="1878" height="357" key="GridCell.Tab.1.center" timestamp="1583695367123">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.center/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583695367123" />
+    <state width="1878" height="357" key="GridCell.Tab.1.left" timestamp="1583695367121">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.left/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583695367121" />
+    <state width="1878" height="357" key="GridCell.Tab.1.right" timestamp="1583695367126">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="357" key="GridCell.Tab.1.right/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583695367126" />
+    <state x="1514" y="166" key="SettingsEditor" timestamp="1583714799790">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state x="1514" y="166" key="SettingsEditor/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583714799790" />
+    <state x="1759" y="412" key="com.intellij.ide.util.TipDialog" timestamp="1583567189578">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state x="1759" y="412" key="com.intellij.ide.util.TipDialog/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583567189578" />
     <state x="319" y="244" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1583477420950" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/parcel_service$parcel_service.coverage" NAME="parcel_service Coverage Results" MODIFIED="1583542182009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$packages.coverage" NAME="Packages Coverage Results" MODIFIED="1583565935410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$distances.coverage" NAME="distances Coverage Results" MODIFIED="1583559895659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parcel_service" />
+    <SUITE FILE_PATH="coverage/parcel_service$Packages__1_.coverage" NAME="Packages (1) Coverage Results" MODIFIED="1583692826211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$Main.coverage" NAME="Main Coverage Results" MODIFIED="1583539150489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/parcel_service$Distances.coverage" NAME="Distances Coverage Results" MODIFIED="1583729471853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$Packages.coverage" NAME="Packages Coverage Results" MODIFIED="1583730840064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
