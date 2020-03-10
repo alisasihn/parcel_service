@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d69054-1c6a-4352-bd7e-30a1e35fd86d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Trucks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DistanceGraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/DistanceGraph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Distances.py" beforeDir="false" afterPath="$PROJECT_DIR$/Distances.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PackageHashTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/PackageHashTable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PackageHashTableChaining.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PackageHashTableLinear.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages.py" beforeDir="false" afterPath="$PROJECT_DIR$/Packages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WGUPS_Package_File.csv" beforeDir="false" afterPath="$PROJECT_DIR$/WGUPS_Package_File.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WGUPS_Distance_Table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/WGUPS_Distance_Table.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -43,7 +43,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Trucks">
     <configuration name="Distances" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="parcel_service" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,11 +110,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Trucks" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="parcel_service" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Trucks.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Trucks" />
         <item itemvalue="Python.Main" />
-        <item itemvalue="Python.Packages" />
         <item itemvalue="Python.Distances" />
+        <item itemvalue="Python.Packages" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +156,7 @@
       <workItem from="1583566047128" duration="21000" />
       <workItem from="1583566081952" duration="681000" />
       <workItem from="1583566911533" duration="259000" />
-      <workItem from="1583567189739" duration="32955000" />
+      <workItem from="1583567189739" duration="58073000" />
     </task>
     <servers />
   </component>
@@ -157,38 +180,46 @@
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
     <state x="1793" y="288" key="FileChooserDialogImpl/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583524924401" />
-    <state width="1878" height="186" key="GridCell.Tab.0.bottom" timestamp="1583796658954">
+    <state width="1877" height="197" key="GridCell.Tab.0.bottom" timestamp="1583878299062">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="186" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796658954" />
-    <state width="1878" height="186" key="GridCell.Tab.0.center" timestamp="1583796658953">
+    <state width="1877" height="197" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583878299062" />
+    <state width="1238" height="213" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1583861283133" />
+    <state width="1877" height="197" key="GridCell.Tab.0.center" timestamp="1583878299051">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="186" key="GridCell.Tab.0.center/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796658953" />
-    <state width="1878" height="186" key="GridCell.Tab.0.left" timestamp="1583796658952">
+    <state width="1877" height="197" key="GridCell.Tab.0.center/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583878299051" />
+    <state width="1238" height="213" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1583861283132" />
+    <state width="1877" height="197" key="GridCell.Tab.0.left" timestamp="1583878299048">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="186" key="GridCell.Tab.0.left/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796658952" />
-    <state width="1878" height="186" key="GridCell.Tab.0.right" timestamp="1583796658954">
+    <state width="1877" height="197" key="GridCell.Tab.0.left/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583878299048" />
+    <state width="1238" height="213" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1583861283132" />
+    <state width="1877" height="197" key="GridCell.Tab.0.right" timestamp="1583878299061">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="186" key="GridCell.Tab.0.right/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796658954" />
-    <state width="1878" height="357" key="GridCell.Tab.1.bottom" timestamp="1583796154163">
+    <state width="1877" height="197" key="GridCell.Tab.0.right/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583878299061" />
+    <state width="1238" height="213" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1583861283133" />
+    <state width="1877" height="290" key="GridCell.Tab.1.bottom" timestamp="1583871833190">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.bottom/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796154163" />
-    <state width="1878" height="357" key="GridCell.Tab.1.center" timestamp="1583796154159">
+    <state width="1877" height="290" key="GridCell.Tab.1.bottom/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583871833190" />
+    <state width="1238" height="198" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1583861236371" />
+    <state width="1877" height="290" key="GridCell.Tab.1.center" timestamp="1583871833189">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.center/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796154159" />
-    <state width="1878" height="357" key="GridCell.Tab.1.left" timestamp="1583796154150">
+    <state width="1877" height="290" key="GridCell.Tab.1.center/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583871833189" />
+    <state width="1238" height="198" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1583861236370" />
+    <state width="1877" height="290" key="GridCell.Tab.1.left" timestamp="1583871833189">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.left/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796154150" />
-    <state width="1878" height="357" key="GridCell.Tab.1.right" timestamp="1583796154160">
+    <state width="1877" height="290" key="GridCell.Tab.1.left/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583871833189" />
+    <state width="1238" height="198" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1583861236370" />
+    <state width="1877" height="290" key="GridCell.Tab.1.right" timestamp="1583871833190">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
-    <state width="1878" height="357" key="GridCell.Tab.1.right/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583796154160" />
+    <state width="1877" height="290" key="GridCell.Tab.1.right/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583871833190" />
+    <state width="1238" height="198" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1583861236371" />
     <state x="1514" y="166" key="SettingsEditor" timestamp="1583714799790">
       <screen x="1280" y="111" width="1920" height="1057" />
     </state>
@@ -198,14 +229,19 @@
     </state>
     <state x="1759" y="412" key="com.intellij.ide.util.TipDialog/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583567189578" />
     <state x="319" y="244" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1583477420950" />
+    <state x="1906" y="346" width="670" height="676" key="search.everywhere.popup" timestamp="1583810201144">
+      <screen x="1280" y="111" width="1920" height="1057" />
+    </state>
+    <state x="1906" y="346" width="670" height="676" key="search.everywhere.popup/0.23.1280.777/1280.111.1920.1057@1280.111.1920.1057" timestamp="1583810201144" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/parcel_service$parcel_service.coverage" NAME="parcel_service Coverage Results" MODIFIED="1583542182009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parcel_service$packages.coverage" NAME="Packages Coverage Results" MODIFIED="1583565935410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/parcel_service$distances.coverage" NAME="distances Coverage Results" MODIFIED="1583559895659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parcel_service" />
     <SUITE FILE_PATH="coverage/parcel_service$Packages__1_.coverage" NAME="Packages (1) Coverage Results" MODIFIED="1583692826211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/parcel_service$Distances.coverage" NAME="Distances Coverage Results" MODIFIED="1583778072245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/parcel_service$Packages.coverage" NAME="Packages Coverage Results" MODIFIED="1583795278923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/parcel_service$Main.coverage" NAME="Main Coverage Results" MODIFIED="1583796658940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$Trucks.coverage" NAME="Trucks Coverage Results" MODIFIED="1583878299029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$Packages.coverage" NAME="Packages Coverage Results" MODIFIED="1583811465338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$Distances.coverage" NAME="Distances Coverage Results" MODIFIED="1583862225568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parcel_service$Main.coverage" NAME="Main Coverage Results" MODIFIED="1583878075792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

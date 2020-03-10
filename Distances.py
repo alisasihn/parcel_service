@@ -17,7 +17,6 @@ with open('WGUPS_Distance_Table.csv', encoding='utf-8-sig') as distance_csv:
     for header in headers:
         dist_graph.add_vertex(header)
         header_list.append(header)
-
     # add distance data to dictionary
     for row in read_distance:
         distance_dict[row[0]] = {key: value for key, value in zip(headers, row[1:])}
@@ -26,12 +25,5 @@ with open('WGUPS_Distance_Table.csv', encoding='utf-8-sig') as distance_csv:
     i = 0
     j = 0
     while j < len(header_list):
-        dist_graph.add_undirected_edge(header_list[i], header_list[j], distance_dict[header_list[i]][header_list[j]])
+        dist_graph.add_undirected_edge(header_list[i], header_list[j], float(distance_dict[header_list[i]][header_list[j]]))
         j += 1
-
-    # printing to check the data
-    # print(distanceDict)
-    # print(distanceDict['1330 2100 S (84106)']['HUB'])
-    # print(distanceDict['HUB']['1330 2100 S (84106)'])
-    # print(g.adjacency_list)
-    # print(g.edge_weights)

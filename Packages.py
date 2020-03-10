@@ -1,5 +1,4 @@
 import csv
-from PackageHashTable import *
 
 
 class Package:
@@ -23,6 +22,7 @@ class Package:
         return Package.package_list
 
 
+# import data from csv
 with open('WGUPS_Package_File.csv', encoding='utf-8-sig') as package_csv:
     read_package = csv.reader(package_csv, delimiter=',')
     for row in read_package:

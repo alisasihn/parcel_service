@@ -2,11 +2,11 @@
 # 001241143
 from Distances import *
 from Packages import *
+from PackageHashTable import *
 
 # add package objects to hash table
 # average = O(1); worst case = O(n) for insert
-new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass,
-                      read_special_notes, read_status)
+new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass, read_special_notes, read_status)
 package_list = new_package.get_packages()
 package_table = PackageHashTable()
 i = 1
@@ -37,7 +37,7 @@ def menu_select(selection):
 
 # insert new package
 def insert_package():
-    package_id = input('Enter package ID or enter EXIT to exit to main menu: ')
+    package_id = input('Enter package ID or enter EXIT to exit to main menu. Please note that new packages will not be delivered today.: ')
 
     # if user enters nothing, restart insert_package
     if package_id.lower() == '':
@@ -75,13 +75,17 @@ def insert_package():
         ins_package = Package(package_id, address, city, state, postal, deadline, mass, special_notes, status)
         ins_package.add_package(new_package_info)
         package_table.insert(package_id, new_package_info)
-        print(package_list)
-        print(package_table.table)
         main_menu()
 
-def start_simulation():
-    input_time = input('Please enter the time you would like simulate to in HH24:MM (e.g. 14:15) format: ')
 
+def start_simulation():
+    input_time = input('Please enter the time you would like simulate to in HH24:MM (e.g. 14:15) format. Enter EXIT to exit to main menu: ')
+    if input_time.lower() == 'exit':
+        main_menu()
+    else:
+        minutes = int(input_time[:-3]) * 60 + int(input_time[-2:])
+        print(minutes)
+        start_simulation()
 
 # start CLI program
 main_menu()

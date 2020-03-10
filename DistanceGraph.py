@@ -1,6 +1,8 @@
 class Vertex:
     def __init__(self, label):
         self.label = label
+        self.distance = float('inf')
+        self.pred_vertex = None
 
 
 class Graph:
@@ -13,10 +15,10 @@ class Graph:
         self.adjacency_list[new_vertex] = []
 
     # O(1)
-    def add_directed_edge(self, from_vertex, to_vertex, weight=1.0):
+    def add_directed_edge(self, from_vertex, to_vertex, weight):
         self.edge_weights[(from_vertex, to_vertex)] = weight
         self.adjacency_list[from_vertex].append(to_vertex)
 
-    def add_undirected_edge(self, vertex_a, vertex_b, weight=1.0):
+    def add_undirected_edge(self, vertex_a, vertex_b, weight):
         self.add_directed_edge(vertex_a, vertex_b, weight)
         self.add_directed_edge(vertex_b, vertex_a, weight)
