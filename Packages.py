@@ -1,47 +1,39 @@
 import csv
-from PackageHashTable import PackageHashTable
+from PackageHashTable import *
 
-# import package information from csv
-# with open('WGUPS_Package_File.csv', encoding='utf-8-sig') as package_csv:
-#     readPackage = csv.reader(package_csv, delimiter=',')
-#     packageTable = PackageHashTable()
-#     numRows = 0
-#     for row in readPackage:
-#         numRows +=1
-#         package_id = row[0]
-#         address = row[1]
-#         city = row[2]
-#         state = row[3]
-#         postal = row[4]
-#         deadline = row[5]
-#         mass = row[6]
-#         special_notes = row[7]
-#         status = row[8]
-#         package_info = package_id, address, city, state, postal, deadline, mass, special_notes, status
-#         packageTable.insert(int(package_id), package_info)
-#
-#     # printing hash table to see the data
-#     i = 1
-#     while i <= numRows:
-#         print(packageTable.table[i])
-#         i += 1
 
-# create empty dictionary to add package information
-packageDict = {}
-# create instance of PackageHashTable class
-packages = PackageHashTable()
+class Package:
+    package_list = []
 
-#import package information from csv file
+    def __init__(self, package_id, address, city, state, postal, deadline, mass, special_notes, status):
+        self.package_id = package_id
+        self.address = address
+        self.city = city
+        self.state = state
+        self.postal = postal
+        self.deadline = deadline
+        self.mass = mass
+        self.special_notes = special_notes
+        self.status = status
+
+    def add_package(self, package):
+        Package.package_list.append(package)
+
+    def get_packages(self):
+        return Package.package_list
+
+
 with open('WGUPS_Package_File.csv', encoding='utf-8-sig') as package_csv:
-    readPackage = csv.DictReader(package_csv, delimiter=',')
-    i = 1
-    for row in readPackage:
-        packageDict[i] = row
-        packages.insert(i, row)
-        i += 1
-
-    # printing to check the data in the dictionary
-    x = 1
-    while x < 41:
-        print(packageDict[x])
-        x += 1
+    read_package = csv.reader(package_csv, delimiter=',')
+    for row in read_package:
+        read_package_id = row[0]
+        read_address = row[1]
+        read_city = row[2]
+        read_state = row[3]
+        read_postal = row[4]
+        read_deadline = row[5]
+        read_mass = row[6]
+        read_special_notes = row[7]
+        read_status = row[8]
+        new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass, read_special_notes, read_status)
+        new_package.add_package(row)
