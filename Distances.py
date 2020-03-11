@@ -11,12 +11,15 @@ distance_dict = {}
 # import package information from csv
 with open('WGUPS_Distance_Table.csv', encoding='utf-8-sig') as distance_csv:
     read_distance = csv.reader(distance_csv, delimiter=',')
+
     # grab headers from first row of csv
     headers = next(read_distance)[1:]
+
     # add nodes to graph
     for header in headers:
         dist_graph.add_vertex(header)
         header_list.append(header)
+
     # add distance data to dictionary
     for row in read_distance:
         distance_dict[row[0]] = {key: value for key, value in zip(headers, row[1:])}

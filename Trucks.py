@@ -1,10 +1,13 @@
-import operator
+from math import floor
 
 from Packages import *
 from Distances import *
 
+# create instance of Package class
 new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass,
                       read_special_notes, read_status)
+
+# get all packages
 package_list = new_package.get_packages()
 
 # manually load truck 1
@@ -17,13 +20,56 @@ truck2 = [package_list[1], package_list[2], package_list[3], package_list[4], pa
           package_list[17], package_list[21], package_list[22], package_list[23], package_list[26], package_list[32],
           package_list[34], package_list[35], package_list[37], package_list[38]]
 
-# truck 3 will not be loaded until 9:05
+# manually load truck 3
 truck3 = [package_list[5], package_list[8], package_list[11], package_list[16], package_list[24], package_list[25],
           package_list[27], package_list[31]]
 
 
+# change status of packages on departed truck to 'In Transit'
+def in_transit(truck):
+    for z in range(0, len(truck)):
+        truck[z][8] = 'In Transit'
+
+
+# change status of package to 'Delivered HH24:MM'
+def package_delivered(truck, distance_traveled, location):
+    # calculate the time of delivery
+    elapsed_time = distance_traveled * (1 / 18) * 60
+    delivered_hour = floor(elapsed_time / 60) + 8
+    delivered_minute = str(round(elapsed_time % 60))
+    if len(delivered_minute) == 1:
+        delivered_minute = '0' + delivered_minute
+    delivered_time = str(delivered_hour) + ':' + delivered_minute
+
+    # parse the location to split into address and zip
+    location_address = (location.split('(')[0]).rstrip()
+    location_postal = (location.split('(')[1]).split(')')[0]
+    for z in range(0, len(truck)):
+        if location_address == truck[z][1] and location_postal == truck[z][4]:
+            truck[z][8] = 'Delivered at ' + delivered_time
+
+
+# truck 3 leaves HUB at different time
+def package_delivered_truck3(truck, distance_traveled, location):
+    # calculate the time of delivery
+    elapsed_time = distance_traveled * (1 / 18) * 60
+    delivered_hour = floor(elapsed_time / 60) + 9
+    delivered_minute = str(round(elapsed_time % 60) + 5)
+    if len(delivered_minute) == 1:
+        delivered_minute = '0' + delivered_minute
+    delivered_time = str(delivered_hour) + ':' + delivered_minute
+
+    # parse the location to split into address and zip
+    location_address = (location.split('(')[0]).rstrip()
+    location_postal = (location.split('(')[1]).split(')')[0]
+    for z in range(0, len(truck)):
+        if location_address == truck[z][1] and location_postal == truck[z][4]:
+            truck[z][8] = 'Delivered at ' + delivered_time
+
+
 # map truck route
-def truck_route(truck, current_vertex):
+def truck_route(truck, current_vertex, time):
+    in_transit(truck)
     dest_queue = []
     x = 0
     # these are all the stops the truck has to make
@@ -39,81 +85,78 @@ def truck_route(truck, current_vertex):
             dest_queue.append(vertex_address)
         x += 1
 
-    path = current_vertex
+    path = []
     dist_traveled = float(0.0)
-    dist_traveled_str = ''
+    dist_limit = float((time / 60) * 18)
+    stop = False
 
     # go through the queue and create a route
     # O(n^2)
-    while len(dest_queue) > 0:
+    while len(dest_queue) > 0 and not stop:
         index = 0
         # find adjacent vertex with shortest distance
         for y in range(0, len(dest_queue)):
-            if float(distance_dict[current_vertex][dest_queue[y]]) < float(distance_dict[current_vertex][dest_queue[index]]):
+            if float(distance_dict[current_vertex][dest_queue[y]]) < float(
+                    distance_dict[current_vertex][dest_queue[index]]):
                 index = y
         prev_vertex = current_vertex
-        current_vertex = dest_queue.pop(index)
-        path = path + ' -> ' + current_vertex
+        current_vertex = dest_queue[index]
         dist_traveled = float(dist_traveled) + float(distance_dict[prev_vertex][current_vertex])
-        dist_traveled_str = dist_traveled_str + ' + ' + distance_dict[prev_vertex][current_vertex]
+        if dist_traveled <= dist_limit:
+            package_delivered(truck, dist_traveled, current_vertex)
+            path.append(current_vertex)
+            current_vertex = dest_queue.pop(index)
+        else:
+            dist_traveled = dist_traveled - float(distance_dict[prev_vertex][current_vertex])
+            stop = True
 
-    print(path)
-    print(round(dist_traveled, 2))
 
+# map truck route for truck 3
+def truck3_route(truck, current_vertex, time):
+    # correct delivery address for package #9 is received at 10:20
+    if time >= 140:
+        truck3[1][1] = '410 S State St'
+        truck3[1][2] = 'Salt Lake City'
+        truck3[1][3] = 'UT'
+        truck3[1][4] = '84111'
 
-truck_route(truck1, 'HUB')
-truck_route(truck2, 'HUB')
-truck_route(truck3, 'HUB')
+    in_transit(truck)
+    dest_queue = []
+    x = 0
+    # these are all the stops the truck has to make
+    while x < len(truck):
+        # extract address information from packages and manipulate to match address format in distance data
+        street_address = truck[x][1]
+        postal_code = truck[x][4]
+        vertex_address = street_address + ' (' + postal_code + ')'
+        # don't add duplicates
+        if vertex_address in dest_queue:
+            pass
+        else:
+            dest_queue.append(vertex_address)
+        x += 1
 
-# dijkstra's algorithm
-# def shortest_path(truck, graph, start_vertex):
-#     unvisited_vertices = []
-#     x = 0
-#     while x < len(truck):
-#         # extract address information from packages and manipulate to match address format in distance data
-#         street_address = truck[x][1]
-#         postal_code = truck[x][4]
-#         vertex_address = street_address + ' (' + postal_code + ')'
-#         # don't add duplicate vertices
-#         if vertex_address in unvisited_vertices:
-#             pass
-#         else:
-#             unvisited_vertices.append(Vertex(vertex_address))
-#         x += 1
-#
-#     start_vertex.distance = 0
-#
-#     while len(unvisited_vertices) > 0:
-#         smallest_index = 0
-#         for y in range(1, len(unvisited_vertices)):
-#             if unvisited_vertices[y].distance < unvisited_vertices[smallest_index].distance:
-#                 smallest_index = y
-#         current_vertex = unvisited_vertices.pop(smallest_index)
-#
-#         for adj_vertex in graph.adjacency_list[current_vertex]:
-#             edge_weight = graph.edge_weights[(current_vertex, adj_vertex)]
-#             alternative_path_distance = current_vertex.distance + edge_weight
-#
-#             if alternative_path_distance < adj_vertex.distance:
-#                 adj_vertex.distance = alternative_path_distance
-#                 adj_vertex.pred_vertex = current_vertex
-#
-#
-# def get_shortest_path(start_vertex, end_vertex):
-#     path = ''
-#     current_vertex = end_vertex
-#     while current_vertex is not start_vertex:
-#         path = ' -> ' + str(current_vertex.label) + path
-#         current_vertex = current_vertex.pred_vertex
-#     path = start_vertex.label + path
-#     return path
-#
-#
-# start = Vertex('HUB')
-# shortest_path(truck1, dist_graph, start)
-#
-# for v in sorted(dist_graph.adjacency_list, key=operator.attrgetter('label')):
-#     if v.pred_vertex is None and v is not start:
-#         print("A to %s: no path exists" % v.label)
-#     else:
-#         print("A to %s: %s (total weight: %g)" % (v.label, get_shortest_path(start, v), v.distance))
+    path = []
+    dist_traveled = float(0.0)
+    dist_limit = float((time / 60) * 18)
+    stop = False
+
+    # go through the queue and create a route
+    # O(n^2)
+    while len(dest_queue) > 0 and not stop:
+        index = 0
+        # find adjacent vertex with shortest distance
+        for y in range(0, len(dest_queue)):
+            if float(distance_dict[current_vertex][dest_queue[y]]) < float(
+                    distance_dict[current_vertex][dest_queue[index]]):
+                index = y
+        prev_vertex = current_vertex
+        current_vertex = dest_queue[index]
+        dist_traveled = float(dist_traveled) + float(distance_dict[prev_vertex][current_vertex])
+        if dist_traveled <= dist_limit:
+            package_delivered_truck3(truck, dist_traveled, current_vertex)
+            path.append(current_vertex)
+            current_vertex = dest_queue.pop(index)
+        else:
+            dist_traveled = dist_traveled - float(distance_dict[prev_vertex][current_vertex])
+            stop = True

@@ -1,12 +1,13 @@
 # Alisa Sihn
 # 001241143
-from Distances import *
-from Packages import *
+
 from PackageHashTable import *
+from Trucks import *
 
 # add package objects to hash table
 # average = O(1); worst case = O(n) for insert
-new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass, read_special_notes, read_status)
+new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass,
+                      read_special_notes, read_status)
 package_list = new_package.get_packages()
 package_table = PackageHashTable()
 i = 1
@@ -37,7 +38,8 @@ def menu_select(selection):
 
 # insert new package
 def insert_package():
-    package_id = input('Enter package ID or enter EXIT to exit to main menu. Please note that new packages will not be delivered today.: ')
+    package_id = input(
+        'Enter package ID or enter EXIT to exit to main menu. Please note that new packages will not be loaded on trucks and delivered today.: ')
 
     # if user enters nothing, restart insert_package
     if package_id.lower() == '':
@@ -75,17 +77,51 @@ def insert_package():
         ins_package = Package(package_id, address, city, state, postal, deadline, mass, special_notes, status)
         ins_package.add_package(new_package_info)
         package_table.insert(package_id, new_package_info)
+        new_package_list = ins_package.get_packages()
+        for x in range(0, len(new_package_list)):
+            print(new_package_list[x])
         main_menu()
 
 
+# start simulation
 def start_simulation():
     input_time = input('Please enter the time you would like simulate to in HH24:MM (e.g. 14:15) format. Enter EXIT to exit to main menu: ')
+
+    # navigate back to main menu
     if input_time.lower() == 'exit':
         main_menu()
+
+    # proceed to simulation
     else:
-        minutes = int(input_time[:-3]) * 60 + int(input_time[-2:])
-        print(minutes)
-        start_simulation()
+        minutes = (int(input_time[:-3]) * 60 + int(input_time[-2:])) - 480
+        # truck 3 will not leave HUB until 9:05
+        if minutes >= 65:
+            truck_route(truck1, 'HUB', minutes)
+            truck_route(truck2, 'HUB', minutes)
+            truck3_route(truck3, 'HUB', minutes)
+            print('Status of truck 1 as of ' + input_time + ': ')
+            for x in range(0, len(truck1)):
+                print(truck1[x])
+            print('Status of truck 2 as of ' + input_time + ': ')
+            for x in range(0, len(truck2)):
+                print(truck2[x])
+            print('Status of truck 3 as of ' + input_time + ': ')
+            for x in range(0, len(truck3)):
+                print(truck3[x])
+            start_simulation()
+        else:
+            truck_route(truck1, 'HUB', minutes)
+            truck_route(truck2, 'HUB', minutes)
+            print('Status of truck 1 as of ' + input_time + ': ')
+            for x in range(0, len(truck1)):
+                print(truck1[x])
+            print('Status of truck 2 as of ' + input_time + ': ')
+            for x in range(0, len(truck2)):
+                print(truck2[x])
+            print('Status of truck 3 as of ' + input_time + ': ')
+            print('Truck 3 has not yet left the HUB')
+            start_simulation()
+
 
 # start CLI program
 main_menu()

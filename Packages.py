@@ -2,6 +2,7 @@ import csv
 
 
 class Package:
+    # list to keep track of objects of Package class
     package_list = []
 
     def __init__(self, package_id, address, city, state, postal, deadline, mass, special_notes, status):
@@ -15,9 +16,11 @@ class Package:
         self.special_notes = special_notes
         self.status = status
 
+    # O(1)
     def add_package(self, package):
         Package.package_list.append(package)
 
+    # O(1)
     def get_packages(self):
         return Package.package_list
 
