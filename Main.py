@@ -5,6 +5,7 @@ from PackageHashTable import *
 from Trucks import *
 
 # add package objects to hash table
+# O(n) for while loop
 # average = O(1); worst case = O(n) for insert
 new_package = Package(read_package_id, read_address, read_city, read_state, read_postal, read_deadline, read_mass,
                       read_special_notes, read_status)
@@ -37,6 +38,7 @@ def menu_select(selection):
 
 
 # insert new package
+# O(n^2) overall
 def insert_package():
     package_id = input(
         'Enter package ID or enter EXIT to exit to main menu. Please note that new packages will not be loaded on trucks and delivered today.: ')
@@ -85,6 +87,7 @@ def insert_package():
 
 
 # start simulation
+# O(n) overall
 def start_simulation():
     input_time = input('Please enter the time you would like simulate to in HH24:MM (e.g. 14:15) format. Enter EXIT to exit to main menu: ')
 

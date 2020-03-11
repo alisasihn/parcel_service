@@ -32,6 +32,7 @@ def in_transit(truck):
 
 
 # change status of package to 'Delivered HH24:MM'
+# O(n^2)
 def package_delivered(truck, distance_traveled, location):
     # calculate the time of delivery
     elapsed_time = distance_traveled * (1 / 18) * 60
@@ -50,6 +51,7 @@ def package_delivered(truck, distance_traveled, location):
 
 
 # truck 3 leaves HUB at different time
+# O(n^2)
 def package_delivered_truck3(truck, distance_traveled, location):
     # calculate the time of delivery
     elapsed_time = distance_traveled * (1 / 18) * 60
@@ -68,11 +70,13 @@ def package_delivered_truck3(truck, distance_traveled, location):
 
 
 # map truck route
+# O(n^2) overall
 def truck_route(truck, current_vertex, time):
     in_transit(truck)
     dest_queue = []
     x = 0
     # these are all the stops the truck has to make
+    # O(n)
     while x < len(truck):
         # extract address information from packages and manipulate to match address format in distance data
         street_address = truck[x][1]
@@ -85,13 +89,12 @@ def truck_route(truck, current_vertex, time):
             dest_queue.append(vertex_address)
         x += 1
 
-    path = []
     dist_traveled = float(0.0)
     dist_limit = float((time / 60) * 18)
     stop = False
 
     # go through the queue and create a route
-    # O(n^2)
+    # outer loop = O(n), inner loop = O(n) -> O(n^2)
     while len(dest_queue) > 0 and not stop:
         index = 0
         # find adjacent vertex with shortest distance
@@ -104,7 +107,6 @@ def truck_route(truck, current_vertex, time):
         dist_traveled = float(dist_traveled) + float(distance_dict[prev_vertex][current_vertex])
         if dist_traveled <= dist_limit:
             package_delivered(truck, dist_traveled, current_vertex)
-            path.append(current_vertex)
             current_vertex = dest_queue.pop(index)
         else:
             dist_traveled = dist_traveled - float(distance_dict[prev_vertex][current_vertex])
@@ -112,6 +114,7 @@ def truck_route(truck, current_vertex, time):
 
 
 # map truck route for truck 3
+# O(n^2) overall
 def truck3_route(truck, current_vertex, time):
     # correct delivery address for package #9 is received at 10:20
     if time >= 140:
@@ -124,6 +127,7 @@ def truck3_route(truck, current_vertex, time):
     dest_queue = []
     x = 0
     # these are all the stops the truck has to make
+    # O(n)
     while x < len(truck):
         # extract address information from packages and manipulate to match address format in distance data
         street_address = truck[x][1]
@@ -142,7 +146,7 @@ def truck3_route(truck, current_vertex, time):
     stop = False
 
     # go through the queue and create a route
-    # O(n^2)
+    # outer loop = O(n), inner loop = O(n) -> O(n^2)
     while len(dest_queue) > 0 and not stop:
         index = 0
         # find adjacent vertex with shortest distance

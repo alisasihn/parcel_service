@@ -16,15 +16,18 @@ with open('WGUPS_Distance_Table.csv', encoding='utf-8-sig') as distance_csv:
     headers = next(read_distance)[1:]
 
     # add nodes to graph
+    # O(n)
     for header in headers:
         dist_graph.add_vertex(header)
         header_list.append(header)
 
     # add distance data to dictionary
+    # O(n)
     for row in read_distance:
         distance_dict[row[0]] = {key: value for key, value in zip(headers, row[1:])}
 
     # add edges to graph
+    # O(n)
     i = 0
     j = 0
     while j < len(header_list):

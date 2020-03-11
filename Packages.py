@@ -26,6 +26,7 @@ class Package:
 
 
 # import data from csv
+# O(n)
 with open('WGUPS_Package_File.csv', encoding='utf-8-sig') as package_csv:
     read_package = csv.reader(package_csv, delimiter=',')
     for row in read_package:
