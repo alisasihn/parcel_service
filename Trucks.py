@@ -29,6 +29,7 @@ truck3 = [package_list[5], package_list[8], package_list[11], package_list[16], 
 def in_transit(truck):
     for z in range(0, len(truck)):
         truck[z][8] = 'In Transit'
+        package_list[(int(truck[z][0]) - 1)][8] = 'In Transit'
 
 
 # change status of package to 'Delivered HH24:MM'
@@ -48,6 +49,7 @@ def package_delivered(truck, distance_traveled, location):
     for z in range(0, len(truck)):
         if location_address == truck[z][1] and location_postal == truck[z][4]:
             truck[z][8] = 'Delivered at ' + delivered_time
+            package_list[(int(truck[z][0]) - 1)][8] = 'Delivered at ' + delivered_time
 
 
 # truck 3 leaves HUB at different time
@@ -67,6 +69,7 @@ def package_delivered_truck3(truck, distance_traveled, location):
     for z in range(0, len(truck)):
         if location_address == truck[z][1] and location_postal == truck[z][4]:
             truck[z][8] = 'Delivered at ' + delivered_time
+            package_list[(int(truck[z][0]) - 1)][8] = 'Delivered at ' + delivered_time
 
 
 # map truck route
@@ -124,6 +127,11 @@ def truck3_route(truck, current_vertex, time):
         truck3[1][2] = 'Salt Lake City'
         truck3[1][3] = 'UT'
         truck3[1][4] = '84111'
+        pkg_index = int(truck3[1][0])
+        package_list[pkg_index][1] = '410 S State St'
+        package_list[pkg_index][2] = 'Salt Lake City'
+        package_list[pkg_index][3] = 'UT'
+        package_list[pkg_index][4] = '84111'
 
     in_transit(truck)
     dest_queue = []

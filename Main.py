@@ -86,14 +86,151 @@ def insert_package():
         main_menu()
 
 
+# look for individual packages
+# O(n^2) overall
+def check_status():
+    search_parameter = input('Please select the parameter you would like to use to search for packages - ID, STREET ADDRESS, CITY, POSTAL CODE, DEADLINE, WEIGHT, STATUS. Enter EXIT to go back.: ')
+
+    # exit search
+    if search_parameter.lower() == 'exit':
+        start_simulation()
+
+    # by ID
+    elif search_parameter.lower() == 'id':
+        search_input = input('Enter the ID of the package: ')
+        print('Package with that ID found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input == truck1[x][0]:
+                print(truck1[x])
+        print('Package with that ID found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input == truck2[x][0]:
+                print(truck2[x])
+        print('Package with that ID found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input == truck3[x][0]:
+                print(truck3[x])
+        check_status()
+
+    # by street address
+    elif search_parameter.lower() == 'street address':
+        search_input = input('Enter the street address of the package: ')
+        print('Package with that street address found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input.lower() == truck1[x][1].lower():
+                print(truck1[x])
+        print('Package with that street address found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input.lower() == truck2[x][1].lower():
+                print(truck2[x])
+        print('Package with that street address found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input.lower() == truck3[x][1].lower():
+                print(truck3[x])
+        check_status()
+
+    # by city
+    elif search_parameter.lower() == 'city':
+        search_input = input('Enter the city of the package: ')
+        print('Package with that city found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input.lower() == truck1[x][2].lower():
+                print(truck1[x])
+        print('Package with that city found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input.lower() == truck2[x][2].lower():
+                print(truck2[x])
+        print('Package with that city found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input.lower() == truck3[x][2].lower():
+                print(truck3[x])
+        check_status()
+
+    # by postal code
+    elif search_parameter.lower() == 'postal code':
+        search_input = input('Enter the postal code of the package: ')
+        print('Package with that postal code found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input == truck1[x][4]:
+                print(truck1[x])
+        print('Package with that postal code found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input == truck2[x][4]:
+                print(truck2[x])
+        print('Package with that postal code found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input == truck3[x][4]:
+                print(truck3[x])
+        check_status()
+
+    # by deadline
+    elif search_parameter.lower() == 'deadline':
+        search_input = input('Enter the deadline of the package in HH24:MM format or EOD if no deadline: ')
+        print('Package with that deadline found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input.lower() == truck1[x][5].lower():
+                print(truck1[x])
+        print('Package with that deadline found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input.lower() == truck2[x][5].lower():
+                print(truck2[x])
+        print('Package with that deadline found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input.lower() == truck3[x][5].lower():
+                print(truck3[x])
+        check_status()
+
+    # by weight
+    elif search_parameter.lower() == 'weight':
+        search_input = input('Enter the weight of the package: ')
+        print('Package with that weight found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input == truck1[x][6]:
+                print(truck1[x])
+        print('Package with that weight found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input == truck2[x][6]:
+                print(truck2[x])
+        print('Package with that weight found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input == truck3[x][6]:
+                print(truck3[x])
+        check_status()
+
+    # by status
+    elif search_parameter.lower() == 'status':
+        search_input = input('Enter the status of the package (HUB, In Transit, or Delivered: ')
+        print('Package with that status found on truck 1: ')
+        for x in range(0, len(truck1)):
+            if search_input.lower() == truck1[x][8][0:9].lower():
+                print(truck1[x])
+        print('Package with that status found on truck 2: ')
+        for x in range(0, len(truck2)):
+            if search_input.lower() == truck2[x][8][0:9].lower():
+                print(truck2[x])
+        print('Package with that status found on truck 3: ')
+        for x in range(0, len(truck3)):
+            if search_input.lower() == truck3[x][8][0:9].lower():
+                print(truck3[x])
+        check_status()
+
+    else:
+        print('Not a valid option. Please try again.')
+        check_status()
+
+
 # start simulation
 # O(n) overall
 def start_simulation():
-    input_time = input('Please enter the time you would like simulate to in HH24:MM (e.g. 14:15) format. Enter EXIT to exit to main menu: ')
+    input_time = input('Please enter the time you would like simulate to in HH24:MM (e.g. 14:15) format. Enter EXIT to exit to main menu. Enter SEARCH to look up individual packages.: ')
 
     # navigate back to main menu
     if input_time.lower() == 'exit':
         main_menu()
+
+    # check status of individual packages
+    if input_time.lower() == 'search':
+        check_status()
 
     # proceed to simulation
     else:
