@@ -98,8 +98,11 @@ def start_simulation():
     # proceed to simulation
     else:
         minutes = (int(input_time[:-3]) * 60 + int(input_time[-2:])) - 480
+        if minutes <= 0:
+            print('No trucks have yet to leave the HUB.')
+            start_simulation()
         # truck 3 will not leave HUB until 9:05
-        if minutes >= 65:
+        elif minutes >= 65:
             truck_route(truck1, 'HUB', minutes)
             truck_route(truck2, 'HUB', minutes)
             truck3_route(truck3, 'HUB', minutes)

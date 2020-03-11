@@ -112,6 +112,8 @@ def truck_route(truck, current_vertex, time):
             dist_traveled = dist_traveled - float(distance_dict[prev_vertex][current_vertex])
             stop = True
 
+    print('Total distance traveled so far for one of the trucks: ' + str(round(dist_traveled, 1)) + ' miles')
+
 
 # map truck route for truck 3
 # O(n^2) overall
@@ -164,3 +166,5 @@ def truck3_route(truck, current_vertex, time):
         else:
             dist_traveled = dist_traveled - float(distance_dict[prev_vertex][current_vertex])
             stop = True
+
+    print('Total distance traveled so far for one of the trucks: ' + str(round(dist_traveled, 1)) + ' miles')
