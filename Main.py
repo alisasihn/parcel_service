@@ -78,6 +78,7 @@ def insert_package():
         ins_package.add_package(new_package_info)
         package_table.insert(package_id, new_package_info)
         new_package_list = ins_package.get_packages()
+        print('Printing updated package list: ')
         for x in range(0, len(new_package_list)):
             print(new_package_list[x])
         main_menu()
